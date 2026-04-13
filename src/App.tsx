@@ -10,7 +10,7 @@ import Contato from './pages/Contato'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/si-ufrb-site">
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
