@@ -2,14 +2,19 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { GraduationCap, Calendar, Bell, Link as LinkIcon, Users, ArrowRight, BookOpen, Award, Globe } from 'lucide-react'
 import { infoDA, infoCurso, avisos, linksUteis } from '../data'
+import { useTheme } from '../contexts/ThemeContext'
 
 export default function Home() {
+  const { theme } = useTheme()
   const avisosRecentes = avisos.slice(0, 3)
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero-gradient text-white py-20 md:py-32">
+      <section 
+        className="text-white py-20 md:py-32"
+        style={{ background: theme.heroGradient }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -19,7 +24,7 @@ export default function Home() {
             >
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 {infoDA.nome} <br />
-                <span className="text-ufrb-green-light">{infoCurso.sigla} - UFRB</span>
+                <span style={{ color: theme.primaryLight }}>{infoCurso.sigla} - UFRB</span>
               </h1>
               <p className="text-xl text-gray-200 mb-8">
                 Representando os estudantes do curso de {infoCurso.nome} da {infoCurso.university}.
@@ -27,7 +32,8 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/diretoria"
-                  className="inline-flex items-center px-6 py-3 bg-white text-ufrb-green font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-white font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  style={{ color: theme.primary }}
                 >
                   <Users className="w-5 h-5 mr-2" />
                   Nossa Diretoria
@@ -82,10 +88,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900">
-              <Bell className="w-8 h-8 inline mr-2 text-ufrb-green" />
+              <Bell className="w-8 h-8 inline mr-2" style={{ color: theme.primary }} />
               Avisos Recentes
             </h2>
-            <Link to="/avisos" className="text-ufrb-green font-medium hover:underline flex items-center">
+            <Link 
+              to="/avisos" 
+              className="font-medium hover:underline flex items-center"
+              style={{ color: theme.primary }}
+            >
               Ver todos <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -97,11 +107,13 @@ export default function Home() {
                 whileHover={{ y: -5 }}
                 className="bg-white rounded-xl shadow-md p-6 card-hover"
               >
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${
-                  aviso.prioridade === 'alta' ? 'bg-red-100 text-red-700' :
-                  aviso.prioridade === 'media' ? 'bg-yellow-100 text-yellow-700' :
-                  'bg-green-100 text-green-700'
-                }`}>
+                <div 
+                  className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
+                  style={{ 
+                    backgroundColor: aviso.prioridade === 'alta' ? '#fee2e2' : aviso.prioridade === 'media' ? '#fef3c7' : '#dcfce7',
+                    color: aviso.prioridade === 'alta' ? '#dc2626' : aviso.prioridade === 'media' ? '#d97706' : '#16a34a'
+                  }}
+                >
                   {aviso.prioridade === 'alta' ? '🔴 Urgente' : aviso.prioridade === 'media' ? '🟡 Importante' : '🟢 Info'}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{aviso.titulo}</h3>
@@ -118,10 +130,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900">
-              <LinkIcon className="w-8 h-8 inline mr-2 text-ufrb-green" />
+              <LinkIcon className="w-8 h-8 inline mr-2" style={{ color: theme.primary }} />
               Links Úteis
             </h2>
-            <Link to="/links" className="text-ufrb-green font-medium hover:underline flex items-center">
+            <Link 
+              to="/links" 
+              className="font-medium hover:underline flex items-center"
+              style={{ color: theme.primary }}
+            >
               Ver todos <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -135,7 +151,10 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
               >
-                <div className="w-12 h-12 bg-ufrb-green rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: theme.primary }}
+                >
                   <LinkIcon className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-sm font-medium text-center text-gray-700">{link.titulo}</span>
@@ -154,7 +173,10 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-md p-6">
-              <div className="w-14 h-14 bg-ufrb-green rounded-xl flex items-center justify-center mb-4">
+              <div 
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                style={{ backgroundColor: theme.primary }}
+              >
                 <GraduationCap className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Grau</h3>
@@ -162,7 +184,10 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-xl shadow-md p-6">
-              <div className="w-14 h-14 bg-ufrb-secondary rounded-xl flex items-center justify-center mb-4">
+              <div 
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                style={{ backgroundColor: theme.secondary }}
+              >
                 <Calendar className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Duração</h3>
@@ -181,7 +206,10 @@ export default function Home() {
       </section>
 
       {/* Contato CTA */}
-      <section className="py-16 hero-gradient">
+      <section 
+        className="py-16"
+        style={{ background: theme.heroGradient }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Fale Conosco</h2>
           <p className="text-xl text-gray-200 mb-8">
@@ -189,7 +217,8 @@ export default function Home() {
           </p>
           <Link
             to="/contato"
-            className="inline-flex items-center px-8 py-4 bg-white text-ufrb-green font-bold rounded-lg hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center px-8 py-4 bg-white font-bold rounded-lg hover:bg-gray-100 transition-colors"
+            style={{ color: theme.primary }}
           >
             Entre em Contato
             <ArrowRight className="w-5 h-5 ml-2" />

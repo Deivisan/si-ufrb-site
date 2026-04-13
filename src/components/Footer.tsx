@@ -1,7 +1,10 @@
 import { GraduationCap, Mail, MapPin, Phone } from 'lucide-react'
 import { infoDA, infoCurso, redesSociaisUFRB } from '../data'
+import { useTheme } from '../contexts/ThemeContext'
 
 export default function Footer() {
+  const { theme } = useTheme()
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -9,7 +12,10 @@ export default function Footer() {
           {/* Logo e Descrição */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-ufrb-green rounded-lg flex items-center justify-center">
+              <div 
+                className="w-12 h-12 rounded-lg flex items-center justify-center"
+                style={{ backgroundColor: theme.primary }}
+              >
                 <GraduationCap className="w-7 h-7 text-white" />
               </div>
               <div>
@@ -23,13 +29,31 @@ export default function Footer() {
               Campus Cruz das Almas.
             </p>
             <div className="flex space-x-4">
-              <a href={infoDA.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ufrb-green transition-colors">
+              <a 
+                href={infoDA.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:transition-colors"
+                style={{ color: theme.primary }}
+              >
                 Instagram
               </a>
-              <a href={infoDA.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ufrb-green transition-colors">
+              <a 
+                href={infoDA.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:transition-colors"
+                style={{ color: theme.primary }}
+              >
                 Facebook
               </a>
-              <a href={infoDA.whatsapp} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ufrb-green transition-colors">
+              <a 
+                href={infoDA.whatsapp} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:transition-colors"
+                style={{ color: theme.primary }}
+              >
                 WhatsApp
               </a>
             </div>
@@ -60,7 +84,13 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400">
               {redesSociaisUFRB.map((item) => (
                 <li key={item.nome}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:text-ufrb-green transition-colors">
+                  <a 
+                    href={item.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:transition-colors"
+                    style={{ color: theme.primary }}
+                  >
                     {item.nome}
                   </a>
                 </li>

@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import { Bell, AlertTriangle, Info, Clock } from 'lucide-react'
 import { avisos } from '../data'
+import { useTheme } from '../contexts/ThemeContext'
 
 export default function Avisos() {
+  const { theme } = useTheme()
+
   const getIcon = (prioridade: string) => {
     switch (prioridade) {
       case 'alta':
@@ -42,7 +45,7 @@ export default function Avisos() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            <Bell className="w-10 h-10 inline mr-2 text-ufrb-green" />
+            <Bell className="w-10 h-10 inline mr-2" style={{ color: theme.primary }} />
             Avisos e Comunicados
           </h1>
           <p className="text-xl text-gray-600">
@@ -58,7 +61,8 @@ export default function Avisos() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-white rounded-xl shadow-md p-6 border-l-4 ${getColor(aviso.prioridade).replace('bg-', 'border-').split(' ')[0]}`}
+              className={`bg-white rounded-xl shadow-md p-6 border-l-4`}
+              style={{ borderColor: getColor(aviso.prioridade).includes('red') ? '#dc2626' : getColor(aviso.prioridade).includes('yellow') ? '#d97706' : '#16a34a' }}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getColor(aviso.prioridade)}`}>
@@ -82,7 +86,10 @@ export default function Avisos() {
         </div>
 
         {/* Newsletter / staying informado */}
-        <div className="mt-12 bg-ufrb-green text-white rounded-2xl p-8 text-center">
+        <div 
+          className="mt-12 text-white rounded-2xl p-8 text-center"
+          style={{ backgroundColor: theme.primary }}
+        >
           <h3 className="text-2xl font-bold mb-4">Quer receber os avisos por email?</h3>
           <p className="text-gray-200 mb-6">
             Receba os avisos diretamente no seu email. Informe seu email institucional abaixo.
@@ -95,7 +102,8 @@ export default function Avisos() {
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-ufrb-secondary text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors"
+              className="px-6 py-3 font-semibold rounded-lg hover:bg-opacity-90 transition-colors"
+              style={{ backgroundColor: theme.secondary }}
             >
               Inscrever-se
             </button>

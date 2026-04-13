@@ -1,6 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import { GraduationCap, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import ThemePicker from './ThemePicker'
+import { useTheme } from '../contexts/ThemeContext'
 
 const navLinks = [
   { to: '/', label: 'Início' },
@@ -14,6 +16,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
+  const { theme } = useTheme()
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
@@ -21,7 +24,10 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-ufrb-green rounded-lg flex items-center justify-center">
+            <div 
+              className="w-10 h-10 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: theme.primary }}
+            >
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <div className="hidden sm:block">
@@ -30,7 +36,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu + Theme Picker */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
@@ -38,13 +44,17 @@ export default function Navbar() {
                 to={link.to}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   location.pathname === link.to
-                    ? 'bg-ufrb-green text-white'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-ufrb-green'
+                    ? 'text-white'
+                    : 'text-gray-600 hover:bg-gray-100'
                 }`}
+                style={location.pathname === link.to ? { backgroundColor: theme.primary } : {}}
               >
                 {link.label}
               </Link>
             ))}
+            <div className="ml-2 pl-2 border-l border-gray-200">
+              <ThemePicker />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,13 +78,17 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-lg font-medium ${
                   location.pathname === link.to
-                    ? 'bg-ufrb-green text-white'
+                    ? 'text-white'
                     : 'text-gray-600 hover:bg-gray-100'
                 }`}
+                style={location.pathname === link.to ? { backgroundColor: theme.primary } : {}}
               >
                 {link.label}
               </Link>
             ))}
+            <div className="py-3 border-t border-gray-100">
+              <ThemePicker />
+            </div>
           </div>
         </div>
       )}
