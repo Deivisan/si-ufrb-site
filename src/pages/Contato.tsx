@@ -2,11 +2,13 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle, Send, ArrowRight } from 'lucide-react'
 import { infoDA, infoCurso } from '../data'
 import { useState } from 'react'
+import { useTheme } from '../contexts/ThemeContext'
 
 // WhatsApp do Coordenador de TI (Deivison Santana)
 const whatsAppTI = 'https://wa.me/5575981231019'
 
 export default function Contato() {
+  const { theme } = useTheme()
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -47,19 +49,19 @@ export default function Contato() {
       icon: <Instagram className="w-6 h-6" />,
       nome: 'Instagram',
       link: infoDA.instagram,
-      cor: 'bg-pink-600',
+      cor: '#ec4899',
     },
     {
       icon: <Facebook className="w-6 h-6" />,
       nome: 'Facebook',
       link: infoDA.facebook,
-      cor: 'bg-blue-600',
+      cor: '#2563eb',
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
       nome: 'WhatsApp',
       link: infoDA.whatsapp,
-      cor: 'bg-green-500',
+      cor: '#22c55e',
     },
   ]
 
@@ -69,7 +71,7 @@ export default function Contato() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            <MessageCircle className="w-10 h-10 inline mr-2 text-ufrb-green" />
+            <MessageCircle className="w-10 h-10 inline mr-2" style={{ color: theme.primary }} />
             Fale Conosco
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -95,7 +97,10 @@ export default function Contato() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-ufrb-green rounded-full flex items-center justify-center text-white flex-shrink-0">
+                  <div 
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-white flex-shrink-0"
+                    style={{ backgroundColor: theme.primary }}
+                  >
                     {opcao.icon}
                   </div>
                   <div>
@@ -113,7 +118,8 @@ export default function Contato() {
                 href={whatsAppTI}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors"
+                className="flex items-center justify-between p-4 text-white rounded-xl hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: '#22c55e' }}
               >
                 <div className="flex items-center space-x-4">
                   <MessageCircle className="w-8 h-8" />
@@ -139,7 +145,8 @@ export default function Contato() {
                     href={rede.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${rede.cor} text-white p-3 rounded-full hover:opacity-90 transition-opacity`}
+                    className="text-white p-3 rounded-full hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: rede.cor }}
                   >
                     {rede.icon}
                   </a>
@@ -148,7 +155,10 @@ export default function Contato() {
             </div>
 
             {/* Horário de Atendimento */}
-            <div className="bg-ufrb-secondary text-white rounded-xl p-6">
+            <div 
+              className="text-white rounded-xl p-6"
+              style={{ backgroundColor: theme.secondary }}
+            >
               <h3 className="text-lg font-semibold mb-3">Horário de Atendimento</h3>
               <ul className="space-y-2 text-gray-300">
                 <li>📅 Segunda a Sexta</li>
@@ -158,7 +168,7 @@ export default function Contato() {
             </div>
 
             {/* Ideias e Sugestões */}
-            <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 border-2 border-ufrb-green rounded-xl p-6">
+            <div className="mt-8 border-2 rounded-xl p-6" style={{ borderColor: theme.primary, backgroundColor: theme.accent }}>
               <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                 <span className="text-2xl mr-2">💡</span>
                 Ideias e Sugestões
@@ -171,7 +181,8 @@ export default function Contato() {
                 href={whatsAppTI}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors"
+                className="inline-flex items-center px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-colors"
+                style={{ backgroundColor: theme.primary }}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Enviar Ideia pelo WhatsApp
@@ -193,7 +204,8 @@ export default function Contato() {
                   value={formData.nome}
                   onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ufrb-green focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                  style={{ '--tw-ring-color': theme.primary } as React.CSSProperties}
                   placeholder="Digite seu nome"
                 />
               </div>
@@ -208,7 +220,8 @@ export default function Contato() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ufrb-green focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                  style={{ '--tw-ring-color': theme.primary } as React.CSSProperties}
                   placeholder="seu.email@estudante.ufrb.edu.br"
                 />
               </div>
@@ -221,7 +234,8 @@ export default function Contato() {
                   id="tipo"
                   value={formData.tipo}
                   onChange={(e) => setFormData({ ...formData, tipo: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ufrb-green focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                  style={{ '--tw-ring-color': theme.primary } as React.CSSProperties}
                 >
                   <option value="duvida">Dúvida</option>
                   <option value="sugestao">Sugestão</option>
@@ -241,14 +255,16 @@ export default function Contato() {
                   onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ufrb-green focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent resize-none"
+                  style={{ '--tw-ring-color': theme.primary } as React.CSSProperties}
                   placeholder="Digite sua mensagem..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center px-6 py-3 bg-ufrb-green text-white font-semibold rounded-lg hover:bg-ufrb-green-light transition-colors"
+                className="w-full flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg hover:opacity-90 transition-colors"
+                style={{ backgroundColor: theme.primary }}
               >
                 <Send className="w-5 h-5 mr-2" />
                 Enviar Mensagem

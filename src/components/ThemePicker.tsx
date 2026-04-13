@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Palette, Check, ChevronDown } from 'lucide-react'
+import { Check, ChevronDown, Settings } from 'lucide-react'
 import { useTheme, themes, ThemeName } from '../contexts/ThemeContext'
 
 export default function ThemePicker() {
@@ -26,10 +26,11 @@ export default function ThemePicker() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
         aria-label="Selecionar tema"
+        title="Alterar tema"
       >
-        <Palette className="w-4 h-4" style={{ color: currentTheme.primary }} />
+        <Settings className="w-5 h-5" style={{ color: themeName === 'default' ? '#009c3b' : currentTheme.primary }} />
         <span className="hidden sm:inline text-sm font-medium text-gray-700">
-          {currentTheme.label}
+          Temas
         </span>
         <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
