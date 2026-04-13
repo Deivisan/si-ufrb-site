@@ -207,7 +207,7 @@ export const infoDA = {
   email: 'contato@si-ufrb.com',
   instagram: 'https://instagram.com/siufrb',
   facebook: 'https://facebook.com/siufrb',
-  whatsapp: 'https://chat.whatsapp.com/seu-codigo-aqui',
+  whatsapp: 'https://wa.me/5575981231019',
 }
 
 // Redes sociais da UFRB

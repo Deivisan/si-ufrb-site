@@ -1,12 +1,16 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle, Send, ArrowRight } from 'lucide-react'
 import { infoDA, infoCurso } from '../data'
 import { useState } from 'react'
+
+// WhatsApp do Coordenador de TI (Deivison Santana)
+const whatsAppTI = 'https://wa.me/5575981231019'
 
 export default function Contato() {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
+    tipo: 'duvida',
     mensagem: '',
   })
 
@@ -14,7 +18,7 @@ export default function Contato() {
     e.preventDefault()
     // Aqui você pode implementar o envio real do formulário
     alert('Mensagem enviada com sucesso! Em breve a Diretoria entrará em contato.')
-    setFormData({ nome: '', email: '', mensagem: '' })
+    setFormData({ nome: '', email: '', tipo: 'duvida', mensagem: '' })
   }
 
   const contatoOpcoes = [
@@ -102,6 +106,29 @@ export default function Contato() {
               ))}
             </div>
 
+            {/* WhatsApp Coordenador de TI */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Fale Direto pelo WhatsApp</h3>
+              <a
+                href={whatsAppTI}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors"
+              >
+                <div className="flex items-center space-x-4">
+                  <MessageCircle className="w-8 h-8" />
+                  <div>
+                    <p className="font-semibold">Coordenador de Tecnologia</p>
+                    <p className="text-sm text-green-100">(75) 98123-1019</p>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <p className="text-xs text-gray-500 mt-2">
+                Tire dúvidas, sugira melhorias ou fale diretamente com o Coordenador de TI da Diretoria
+              </p>
+            </div>
+
             {/* Redes Sociais */}
             <div className="mb-8">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Redes Sociais</h3>
@@ -128,6 +155,27 @@ export default function Contato() {
                 <li>⏰ 08h00 às 12h00 | 14h00 às 18h00</li>
                 <li>📍 Sala do D.A. SI - Campus Cruz das Almas</li>
               </ul>
+            </div>
+
+            {/* Ideias e Sugestões */}
+            <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 border-2 border-ufrb-green rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                <span className="text-2xl mr-2">💡</span>
+                Ideias e Sugestões
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Tem uma ideia para melhorar o curso, o D.A. ou quer contribuir de alguma forma? 
+                Sua voz é importante! Clique no botão abaixo e envie sua sugestão diretamente pelo WhatsApp.
+              </p>
+              <a
+                href={whatsAppTI}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Enviar Ideia pelo WhatsApp
+              </a>
             </div>
           </div>
 
@@ -163,6 +211,24 @@ export default function Contato() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ufrb-green focus:border-transparent"
                   placeholder="seu.email@estudante.ufrb.edu.br"
                 />
+              </div>
+
+              <div>
+                <label htmlFor="tipo" className="block text-sm font-medium text-gray-700 mb-1">
+                  Tipo de Mensagem
+                </label>
+                <select
+                  id="tipo"
+                  value={formData.tipo}
+                  onChange={(e) => setFormData({ ...formData, tipo: e.target.value })}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ufrb-green focus:border-transparent"
+                >
+                  <option value="duvida">Dúvida</option>
+                  <option value="sugestao">Sugestão</option>
+                  <option value="reclamacao">Reclamação</option>
+                  <option value="elogio">Elogio</option>
+                  <option value="outro">Outro</option>
+                </select>
               </div>
 
               <div>
