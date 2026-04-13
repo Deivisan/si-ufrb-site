@@ -14,8 +14,8 @@ export default defineConfig({
     host: true,
   },
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     sourcemap: false,
   },
-  base: './',
+  base: '/si-ufrb-site/',
 })
