@@ -17,4 +17,5 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
   },
+  base: '/si-ufrb-site/',
 })
