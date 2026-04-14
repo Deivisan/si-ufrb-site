@@ -66,7 +66,7 @@ export default function Contato() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen py-16" style={{ background: 'linear-gradient(135deg, #f0f0ff 0%, #e8e0f8 100%)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -95,7 +95,8 @@ export default function Contato() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                  className="flex items-center space-x-4 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                  style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}
                 >
                   <div 
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white flex-shrink-0"
@@ -193,7 +194,7 @@ export default function Contato() {
           {/* Formulário de Contato */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Envie uma Mensagem</h2>
-            <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-md p-6 space-y-4">
+            <form onSubmit={handleSubmit} className="rounded-xl shadow-md p-6 space-y-4" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}>
               <div>
                 <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
                   Seu Nome

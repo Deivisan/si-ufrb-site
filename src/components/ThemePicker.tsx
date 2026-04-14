@@ -36,7 +36,7 @@ export default function ThemePicker() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50">
+        <div className="absolute right-0 mt-2 w-56 rounded-xl shadow-lg border border-gray-200 py-2 z-50" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}>
           <div className="px-3 py-2 border-b border-gray-100">
             <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
               Escolher Tema

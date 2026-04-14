@@ -17,12 +17,12 @@ export const themes: Record<ThemeName, Theme> = {
   default: {
     name: 'default',
     label: 'Azul UFRB',
-    primary: '#009c3b',
-    primaryLight: '#00c75b',
-    primaryDark: '#007a2e',
-    secondary: '#003366',
-    accent: '#f5f5f5',
-    heroGradient: 'linear-gradient(135deg, #009c3b 0%, #003366 100%)',
+    primary: '#1a3a8f',
+    primaryLight: '#2d5bc4',
+    primaryDark: '#0f2466',
+    secondary: '#6b21a8',
+    accent: '#f0f0ff',
+    heroGradient: 'linear-gradient(135deg, #1a3a8f 0%, #6b21a8 100%)',
   },
   portal: {
     name: 'portal',

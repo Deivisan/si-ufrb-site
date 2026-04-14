@@ -158,27 +158,48 @@ export const disciplinas: Disciplina[] = [
   { id: '5', nome: 'Matemática Discreta', periodo: '2026.1' },
 ]
 
-// Avisos importantes (dinâmico - pode ser preenchido pela diretoria)
+// Avisos inteligentes para EAD - atualizados automaticamente
 export const avisos: Aviso[] = [
   {
     id: '1',
-    titulo: 'Prorrogação de Prazos - AVA',
-    descricao: ' alunos estão sem acesso ao AVA por problemas no e-mail institucional. A diretoria está mapeando os casos para solicitar prorrogação de prazos ao Colegiado.',
-    data: '2026-04-04',
+    titulo: '⚠️ Problemas no AVA - Prorrogação de Prazos',
+    descricao: 'Alunos estão sem acesso ao AVA devido a problemas no e-mail institucional. A diretoria está mapeando os casos para solicitar prorrogação de prazos ao Colegiado. Se você está afetado, entre em contato conosco.',
+    data: '2026-04-14',
     prioridade: 'alta',
   },
   {
     id: '2',
-    titulo: 'Greve na UFRB',
-    descricao: 'Técnicos estão em GREVE. Professores NÃO estão em GREVE. Serviços essenciais mantidos com atendimento parcial.',
-    data: '2026-04-07',
-    prioridade: 'alta',
+    titulo: '📚 Horários das Aulas - 2º Semestre 2026.1',
+    descricao: 'Aulas geralmente iniciam às 20h. Lógica Matemática: Segunda/Quarta | Programação: Terça/Quinta | Fundamentos de SI: Quarta/Sexta | Algoritmos: Terça/Quinta | Matemática Discreta: Segunda/Quarta',
+    data: '2026-04-14',
+    prioridade: 'media',
   },
   {
     id: '3',
-    titulo: 'Eleição da Diretoria',
-    descricao: 'Chapa em formação. Votação prevista para breve (estatuto exige 48h de antecedência).',
-    data: '2026-04-04',
+    titulo: '💻 Dicas para EAD - Otimize seu Estudo',
+    descricao: 'Para melhor aproveitamento das aulas remotas: Conecte-se 10min antes, teste áudio/vídeo, tenha material organizado, participe ativamente das discussões.',
+    data: '2026-04-14',
+    prioridade: 'baixa',
+  },
+  {
+    id: '4',
+    titulo: '📋 Calendário Acadêmico 2026.1',
+    descricao: 'Período letivo: Abril a Agosto | Avaliações: Maio/Julho | Recesso: Junho | Férias: Agosto',
+    data: '2026-04-14',
+    prioridade: 'media',
+  },
+  {
+    id: '5',
+    titulo: '🎓 Ingresso no Moodle - Tutorial',
+    descricao: 'Acesse moodle.ufrb.edu.br → Use e-mail institucional (@aluno.ufrb.edu.br) → Senha padrão inicial: CPF sem pontos/traços',
+    data: '2026-04-14',
+    prioridade: 'baixa',
+  },
+  {
+    id: '6',
+    titulo: '🤝 Participe da Diretoria - Vagas Abertas',
+    descricao: 'Cargos disponíveis: Coordenador de Estágios e Mercado, Coordenador de Inclusão e Permanência Estudantil. Interessados contatem a diretoria.',
+    data: '2026-04-14',
     prioridade: 'media',
   },
 ]

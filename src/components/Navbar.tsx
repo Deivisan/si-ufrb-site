@@ -7,7 +7,6 @@ import { useTheme } from '../contexts/ThemeContext'
 const navLinks = [
   { to: '/', label: 'Início' },
   { to: '/diretoria', label: 'Diretoria' },
-  { to: '/lideres', label: 'Líderes' },
   { to: '/avisos', label: 'Avisos' },
   { to: '/links', label: 'Links Úteis' },
   { to: '/contato', label: 'Contato' },
@@ -19,7 +18,7 @@ export default function Navbar() {
   const { theme } = useTheme()
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav style={{ background: 'linear-gradient(135deg, #f8f9ff 0%, #f0f0ff 100%)', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }} className="sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
@@ -30,10 +29,8 @@ export default function Navbar() {
             >
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-gray-900">DA SI</span>
-              <span className="text-sm text-gray-500 ml-1">UFRB</span>
-            </div>
+            <div className="text-xl font-bold" style={{ color: 'var(--color-primary-dark)' }}>DA SI</div>
+            <span className="text-sm ml-1" style={{ color: '#6b7280' }}>UFRB</span>
           </Link>
 
           {/* Desktop Menu + Theme Picker */}
@@ -69,7 +66,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden border-t" style={{ background: 'linear-gradient(135deg, #f8f9ff 0%, #f0f0ff 100%)' }}>
           <div className="px-4 py-2 space-y-1">
             {navLinks.map((link) => (
               <Link

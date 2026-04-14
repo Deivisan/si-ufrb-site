@@ -13,12 +13,12 @@
 
   /* CSS Variables para temas dinâmicos */
   :root {
-    --color-primary: #009c3b;
-    --color-primary-light: #00c75b;
-    --color-primary-dark: #007a2e;
-    --color-secondary: #003366;
-    --color-accent: #f5f5f5;
-    --hero-gradient: linear-gradient(135deg, #009c3b 0%, #003366 100%);
+    --color-primary: #1a3a8f;
+    --color-primary-light: #2d5bc4;
+    --color-primary-dark: #0f2466;
+    --color-secondary: #6b21a8;
+    --color-accent: #f0f0ff;
+    --hero-gradient: linear-gradient(135deg, #1a3a8f 0%, #6b21a8 100%);
   }
 }
 

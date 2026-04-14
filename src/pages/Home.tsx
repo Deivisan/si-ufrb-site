@@ -32,8 +32,8 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/diretoria"
-                  className="inline-flex items-center px-6 py-3 bg-white font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-                  style={{ color: theme.primary }}
+                  className="inline-flex items-center px-6 py-3 font-semibold rounded-lg transition-colors"
+                  style={{ background: 'linear-gradient(135deg, #ffffff 0%, #e8e0f8 100%)', color: theme.primary }}
                 >
                   <Users className="w-5 h-5 mr-2" />
                   Nossa Diretoria
@@ -105,7 +105,8 @@ export default function Home() {
               <motion.div
                 key={aviso.id}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-md p-6 card-hover"
+                className="rounded-xl shadow-md p-6 card-hover"
+                style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}
               >
                 <div 
                   className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
@@ -126,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* Links Úteis */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: 'linear-gradient(135deg, #f0f0ff 0%, #e8e0f8 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900">
@@ -172,7 +173,7 @@ export default function Home() {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="rounded-xl shadow-md p-6" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}>
               <div 
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
                 style={{ backgroundColor: theme.primary }}
@@ -183,7 +184,7 @@ export default function Home() {
               <p className="text-gray-600">{infoCurso.grado}</p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="rounded-xl shadow-md p-6" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}>
               <div 
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
                 style={{ backgroundColor: theme.secondary }}
@@ -194,7 +195,7 @@ export default function Home() {
               <p className="text-gray-600">{infoCurso.duracao}</p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="rounded-xl shadow-md p-6" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}>
               <div className="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-4">
                 <Globe className="w-7 h-7 text-white" />
               </div>
@@ -217,8 +218,8 @@ export default function Home() {
           </p>
           <Link
             to="/contato"
-            className="inline-flex items-center px-8 py-4 bg-white font-bold rounded-lg hover:bg-gray-100 transition-colors"
-            style={{ color: theme.primary }}
+            className="inline-flex items-center px-8 py-4 font-bold rounded-lg transition-colors"
+            style={{ background: 'linear-gradient(135deg, #ffffff 0%, #e8e0f8 100%)', color: theme.primary }}
           >
             Entre em Contato
             <ArrowRight className="w-5 h-5 ml-2" />

@@ -30,15 +30,15 @@ export default function Links() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen py-16" style={{ background: 'linear-gradient(135deg, #f0f0ff 0%, #e8e0f8 100%)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold mb-4" style={{ color: 'var(--color-primary-dark)' }}>
             <Globe className="w-10 h-10 inline mr-2" style={{ color: theme.primary }} />
             Links Úteis
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: '#4b5563' }}>
             Acesso rápido aos principais sistemas e serviços da UFRB e do curso
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function Links() {
         {/* Categorias */}
         {categorias.map((categoria, catIndex) => (
           <section key={categoria.nome} className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <h2 className="text-2xl font-bold mb-6 flex items-center" style={{ color: 'var(--color-primary-dark)' }}>
               <span className="w-4 h-4 rounded-full mr-3" style={{ backgroundColor: categoria.cor }}></span>
               {categoria.nome}
             </h2>
@@ -60,10 +60,11 @@ export default function Links() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: catIndex * 0.1 + index * 0.05 }}
-                  className="bg-white rounded-xl shadow-md p-6 card-hover group"
+                  className="rounded-xl shadow-md p-6 card-hover group"
+                  style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}
                 >
                   <div className="flex items-start space-x-4">
-                    <div 
+                    <div
                       className="w-14 h-14 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform"
                       style={{ backgroundColor: categoria.cor }}
                     >
@@ -71,10 +72,10 @@ export default function Links() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-gray-900">{link.titulo}</h3>
-                        <ExternalLink className="w-4 h-4 text-gray-400" />
+                        <h3 className="text-lg font-semibold" style={{ color: 'var(--color-primary-dark)' }}>{link.titulo}</h3>
+                        <ExternalLink className="w-4 h-4" style={{ color: '#9ca3af' }} />
                       </div>
-                      <p className="text-gray-600 text-sm mt-1">{link.descricao}</p>
+                      <p className="text-sm mt-1" style={{ color: '#4b5563' }}>{link.descricao}</p>
                     </div>
                   </div>
                 </motion.a>
@@ -84,8 +85,8 @@ export default function Links() {
         ))}
 
         {/* Info de Contato */}
-        <section className="bg-white rounded-2xl shadow-md p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Contato do Curso</h2>
+        <section className="rounded-2xl shadow-md p-8" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-primary-dark)' }}>Contato do Curso</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="flex items-start space-x-4">
               <div 
@@ -95,28 +96,28 @@ export default function Links() {
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Endereço</h3>
-                <p className="text-gray-600 text-sm">{infoCurso.endereco}</p>
+                <h3 className="font-semibold" style={{ color: 'var(--color-primary-dark)' }}>Endereço</h3>
+                <p className="text-sm" style={{ color: '#4b5563' }}>{infoCurso.endereco}</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div 
+              <div
                 className="w-12 h-12 rounded-full flex items-center justify-center text-white flex-shrink-0"
                 style={{ backgroundColor: theme.secondary }}
               >
                 <Phone className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Telefone</h3>
-                <p className="text-gray-600 text-sm">{infoCurso.telefone}</p>
+                <h3 className="font-semibold" style={{ color: 'var(--color-primary-dark)' }}>Telefone</h3>
+                <p className="text-sm" style={{ color: '#4b5563' }}>{infoCurso.telefone}</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white flex-shrink-0">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center text-white flex-shrink-0" style={{ backgroundColor: 'var(--color-secondary)' }}>
                 <Mail className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Email</h3>
+                <h3 className="font-semibold" style={{ color: 'var(--color-primary-dark)' }}>Email</h3>
                 <p className="text-gray-600 text-sm">{infoCurso.email}</p>
               </div>
             </div>
