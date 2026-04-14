@@ -17,5 +17,5 @@ export default defineConfig({
     outDir: 'docs',
     sourcemap: false,
   },
-  base: '/si-ufrb-site/',
+  base: './',
 })

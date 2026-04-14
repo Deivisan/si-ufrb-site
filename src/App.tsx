@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -12,7 +12,7 @@ import Contato from './pages/Contato'
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter basename="/si-ufrb-site">
+      <HashRouter>
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">
@@ -27,7 +27,7 @@ export default function App() {
           </main>
           <Footer />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   )
 }
