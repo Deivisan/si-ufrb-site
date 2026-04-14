@@ -16,13 +16,13 @@ export interface Theme {
 export const themes: Record<ThemeName, Theme> = {
   default: {
     name: 'default',
-    label: 'Azul UFRB',
-    primary: '#1a3a8f',
-    primaryLight: '#2d5bc4',
-    primaryDark: '#0f2466',
-    secondary: '#6b21a8',
-    accent: '#f0f0ff',
-    heroGradient: 'linear-gradient(135deg, #1a3a8f 0%, #6b21a8 100%)',
+    label: 'Turquesa UFRB',
+    primary: '#0d9488',
+    primaryLight: '#14b8a6',
+    primaryDark: '#0f766e',
+    secondary: '#7c3aed',
+    accent: '#f0fdfa',
+    heroGradient: 'linear-gradient(135deg, #0d9488 0%, #7c3aed 100%)',
   },
   portal: {
     name: 'portal',
