@@ -6,6 +6,8 @@ export interface MembroDiretoria {
   email?: string
   telefone?: string
   foto?: string
+  descricao?: string
+  cor?: string
 }
 
 export interface LinkUtil {
@@ -99,6 +101,9 @@ export const diretoria: MembroDiretoria[] = [
     id: '10',
     nome: 'Luiz (Luiz Alberto Silva Santos)',
     cargo: 'Coordenador de Inclusão e Permanência Estudantil',
+    descricao: 'Ações de inclusão, acessibilidade, apoio estudantil e permanência no curso.',
+    cor: 'bg-emerald-500',
+    foto: '/fotos/luiz-alberto.jpg',
   },
 ]
 
