@@ -9,6 +9,7 @@ const diretoriaCompleta = [
     nome: 'Lucas Machado Lima',
     cargo: 'Presidente',
     telefone: '7199914531',
+    descricao: 'Liderança geral do D.A., representação dos estudantes e coordenação de todas as atividades.',
     icon: <Crown className="w-8 h-8" />,
     cor: 'bg-yellow-500',
   },
@@ -16,6 +17,7 @@ const diretoriaCompleta = [
     nome: 'Iris Lopes',
     cargo: 'Vice-Presidente',
     telefone: '7591266558',
+    descricao: 'Apoia a presidência e assume nas ausências. Coordenação de projetos estratégicos e reuniões.',
     icon: <Shield className="w-8 h-8" />,
     cor: 'bg-blue-500',
   },
@@ -23,6 +25,7 @@ const diretoriaCompleta = [
     nome: 'André Juarez',
     cargo: 'Secretário-Geral',
     telefone: '7199319660',
+    descricao: 'Responsável pela documentação, atas de reuniões e organização interna do Diretório.',
     icon: <BookHeart className="w-8 h-8" />,
     cor: 'bg-green-500',
   },
@@ -30,6 +33,7 @@ const diretoriaCompleta = [
     nome: 'Evelin Miranda',
     cargo: 'Tesoureiro',
     telefone: '7491541394',
+    descricao: 'Gestão financeira transparente e prestação de contas de todos os recursos do D.A.',
     icon: <Award className="w-8 h-8" />,
     cor: 'bg-purple-500',
   },
@@ -37,6 +41,7 @@ const diretoriaCompleta = [
     nome: 'Vince Sales',
     cargo: 'Assuntos Acadêmicos',
     telefone: null,
+    descricao: 'Interface entre alunos, professores e colegiado. Disciplinas, avaliações e qualidade de ensino.',
     icon: <GraduationCap className="w-8 h-8" />,
     cor: 'bg-indigo-500',
   },
@@ -44,6 +49,7 @@ const diretoriaCompleta = [
     nome: 'Brunna Moura',
     cargo: 'Divulgação e RP',
     telefone: '7199463003',
+    descricao: 'Comunicação oficial, redes sociais, marketing e imagem do D.A. junto aos estudantes.',
     icon: <Mic className="w-8 h-8" />,
     cor: 'bg-pink-500',
   },
@@ -51,6 +57,7 @@ const diretoriaCompleta = [
     nome: 'Deivison Santana',
     cargo: 'Tecnologia e Inovação',
     telefone: '7581231019',
+    descricao: 'Desenvolvimento de sistemas, sites, automações e soluções tecnológicas para facilitar a vida dos alunos.',
     icon: <Code className="w-8 h-8" />,
     cor: 'bg-cyan-500',
   },
@@ -58,20 +65,23 @@ const diretoriaCompleta = [
     nome: 'Flávio Augusto',
     cargo: 'Extensão e Projetos',
     telefone: '7583402662',
+    descricao: 'Projetos sociais, parcerias externas, eventos e ações de extensão com a comunidade.',
     icon: <HandHeart className="w-8 h-8" />,
     cor: 'bg-orange-500',
   },
   {
-    nome: 'Iuri Silva',
-    cargo: '1º Secretário FSA',
+    nome: 'Iuri Silva Motta',
+    cargo: '1º Secretário Feira de Santana',
     telefone: null,
+    descricao: 'Representação e suporte aos alunos do polo de Feira de Santana.',
     icon: <Users className="w-8 h-8" />,
     cor: 'bg-teal-500',
   },
   {
-    nome: 'Cássio Figueredo',
+    nome: 'Cássio Figueredo Dourado',
     cargo: '2º Secretário Ipirá',
     telefone: null,
+    descricao: 'Representação e suporte aos alunos do polo de Ipirá.',
     icon: <Users className="w-8 h-8" />,
     cor: 'bg-rose-500',
   },
@@ -79,20 +89,24 @@ const diretoriaCompleta = [
     nome: 'Vileri',
     cargo: '3º Secretário Santo Amaro',
     telefone: null,
+    descricao: 'Representação e suporte aos alunos do polo de Santo Amaro.',
     icon: <Users className="w-8 h-8" />,
     cor: 'bg-lime-500',
   },
   {
     nome: 'Gustavo Bruno',
-    cargo: 'Estágios e Mercado',
+    cargo: 'Estágios e Mercado de Trabalho',
     telefone: null,
+    descricao: 'Parcerias com empresas, vagas de estágio e oportunidades profissionais para os alunos.',
     icon: <Award className="w-8 h-8" />,
     cor: 'bg-amber-500',
   },
   {
-    nome: 'Luiz Alberto Silva',
-    cargo: 'Inclusão e Permanência',
+    nome: 'Luiz Alberto Silva Santos',
+    cargo: 'Inclusão e Permanência Estudantil',
     telefone: '7499893083',
+    descricao: 'Ações de inclusão, acessibilidade, apoio psicológico e combate a evasão escolar.',
+    foto: '/fotos/luiz-alberto.jpg',
     icon: <Users className="w-8 h-8" />,
     cor: 'bg-emerald-500',
   },
@@ -119,33 +133,49 @@ export default function Diretoria() {
         <section className="mb-12">
           <div className="space-y-4">
             {diretoriaCompleta.map((membro, index) => (
-              <motion.a
+              <motion.div
                 key={membro.nome}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.06 }}
-                href={membro.telefone ? `https://wa.me/55${membro.telefone}` : '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center p-5 rounded-xl shadow-md card-hover ${membro.telefone ? 'cursor-pointer' : ''}`}
+                className="rounded-xl shadow-md p-6 card-hover"
                 style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%)' }}
               >
-                <div className={`w-16 h-16 ${membro.cor} rounded-full flex items-center justify-center text-white flex-shrink-0 mr-5`}>
-                  {membro.icon}
+                <div className="flex items-start space-x-5 mb-4">
+                  {membro.foto ? (
+                    <img
+                      src={membro.foto}
+                      alt={membro.nome}
+                      className="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2 border-gray-200"
+                    />
+                  ) : (
+                    <div className={`w-16 h-16 ${membro.cor} rounded-full flex items-center justify-center text-white flex-shrink-0`}>
+                      {membro.icon}
+                    </div>
+                  )}
+
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold" style={{ color: 'var(--color-primary-dark)' }}>{membro.nome}</h3>
+                    <p className={`text-sm text-white px-3 py-0.5 rounded-full inline-block mt-1 ${membro.cor}`}>
+                      {membro.cargo}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold" style={{ color: 'var(--color-primary-dark)' }}>{membro.nome}</h3>
-                  <p className="text-base" style={{ color: theme.primary }}>{membro.cargo}</p>
-                </div>
+                <p className="text-sm mb-4" style={{ color: '#4b5563' }}>{membro.descricao}</p>
 
                 {membro.telefone && (
-                  <div className="flex items-center text-green-600 font-medium">
+                  <a
+                    href={`https://wa.me/55${membro.telefone}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-green-600 font-medium hover:text-green-700"
+                  >
                     <MessageCircle className="w-5 h-5 mr-2" />
-                    WhatsApp
-                  </div>
+                    Entrar em contato pelo WhatsApp
+                  </a>
                 )}
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </section>
