@@ -148,6 +148,13 @@ export const linksUteis: LinkUtil[] = [
     icon: 'calendar',
   },
   {
+    id: '6',
+    titulo: 'Estatuto D.A. SI',
+    url: '/estatuto-da-si-ufrb.pdf',
+    descricao: 'Leia o estatuto oficial do Diretório Acadêmico de Sistemas de Informação em PDF.',
+    icon: 'book-open',
+  },
+  {
     id: '7',
     titulo: 'Intranet UFRB',
     url: 'https://intranet.ufrb.edu.br/',
