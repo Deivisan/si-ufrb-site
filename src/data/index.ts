@@ -150,7 +150,7 @@ export const linksUteis: LinkUtil[] = [
   {
     id: '6',
     titulo: 'Estatuto D.A. SI',
-    url: '/estatuto-da-si-ufrb.pdf',
+    url: 'https://deivisan.github.io/si-ufrb-site/estatuto-da-si-ufrb.pdf',
     descricao: 'Leia o estatuto oficial do Diretório Acadêmico de Sistemas de Informação em PDF.',
     icon: 'book-open',
   },
