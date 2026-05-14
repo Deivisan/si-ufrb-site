@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, BookOpen, User, Globe, GraduationCap, Calendar, Utensils, Code, Library, Mail, Phone, MapPin, MessageCircle, Play, Vote, Video } from 'lucide-react'
-import { linksUteis, infoCurso, infoDA, gruposPolo, coordenacao } from '../data'
+import { linksUteis, infoCurso, gruposPolo, coordenacao } from '../data'
 import { useTheme } from '../contexts/ThemeContext'
 
 // Mapeamento de ícones
@@ -27,6 +27,8 @@ export default function Links() {
     { nome: 'Plataformas Acadêmicas', links: linksUteis.filter(l => ['1','2','3','4'].includes(l.id)), cor: theme.primary },
     { nome: 'Recursos UFRB', links: linksUteis.filter(l => ['5','6','7','8','9','10','11'].includes(l.id)), cor: theme.secondary },
     { nome: 'Programação', links: linksUteis.filter(l => l.id === '12'), cor: '#2563eb' },
+    { nome: 'Ferramentas de Estudo', links: linksUteis.filter(l => ['13','14'].includes(l.id)), cor: '#7c3aed' },
+    { nome: 'Oficiais do Curso', links: linksUteis.filter(l => ['15','16','17'].includes(l.id)), cor: '#dc2626' },
   ]
 
   return (

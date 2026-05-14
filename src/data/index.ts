@@ -35,6 +35,14 @@ export interface Aviso {
   prioridade: 'alta' | 'media' | 'baixa'
 }
 
+// 🔄 Re-export dos novos módulos
+export { eventos, eventosFuturos, eventosPorMes, eventosPorTipo } from './eventos'
+export type { Evento, TipoEvento } from './eventos'
+export { reclamacoes, reclamacoesAtivas, reclamacoesPorCategoria, estatisticasReclamacoes } from './reclamacoes'
+export type { Reclamacao, CategoriaProblema, StatusProblema } from './reclamacoes'
+export { aulasFixas, gravacoes } from './aulas'
+export type { AulaLink } from './aulas'
+
 // Dados da Diretoria 2026 - Chapa completa (D.A. SI UFRB)
 export const diretoria: MembroDiretoria[] = [
   {
@@ -196,6 +204,41 @@ export const linksUteis: LinkUtil[] = [
     descricao: 'Plataforma de exercícios de programação',
     icon: 'code',
   },
+  {
+    id: '13',
+    titulo: 'NotebookLM',
+    url: 'https://notebooklm.google.com/',
+    descricao: 'IA do Google para resumir textos e otimizar estudos (recomendado pela turma)',
+    icon: 'book-open',
+  },
+  {
+    id: '14',
+    titulo: 'Nube - Vagas de Estágio',
+    url: 'https://www.nube.com.br/',
+    descricao: 'Plataforma de vagas de estágio em tecnologia (compartilhado no grupo)',
+    icon: 'graduation-cap',
+  },
+  {
+    id: '15',
+    titulo: 'Site Oficial do Curso',
+    url: 'https://www.ufrb.edu.br/cetens/cursos/sistemas-de-informacao-ead',
+    descricao: 'Página oficial do Bacharelado em SI - EaD no CETENS/UFRB',
+    icon: 'globe',
+  },
+  {
+    id: '16',
+    titulo: 'PPC - Projeto Pedagógico',
+    url: 'https://ufrb.edu.br/cetens/documentos/category/141-sistemas-de-informacao?download=1472%3Aprojeto-pedagogico-de-curso-bacharelado-em-sistemas-de-informacao',
+    descricao: 'Projeto Pedagógico do Curso (Ordem de Serviço CETENS Nº 63/2025)',
+    icon: 'book-open',
+  },
+  {
+    id: '17',
+    titulo: 'Suporte SIGAA',
+    url: 'https://ufrb.edu.br/surrac/suporte-sigaa',
+    descricao: 'Suporte técnico para problemas no SIGAA (login, senha, acesso)',
+    icon: 'user',
+  },
 ]
 
 // Grupos WhatsApp por polo
@@ -238,9 +281,17 @@ export const disciplinas: Disciplina[] = [
   {
     id: '3',
     nome: 'Lógica Matemática / Matemática Discreta',
-    professor: 'Prof. x-math',
+    professor: 'Prof. Anderon',
     periodo: '2026.1',
     diaHora: 'Quinzenal, Quarta, 19h-20h',
+    plataforma: 'Google Meet',
+  },
+  {
+    id: '4',
+    nome: 'Acompanhamento FSI (Tutoria)',
+    professor: 'Lorena Santana (Tutora)',
+    periodo: '2026.1',
+    diaHora: 'Sexta, 19h-20h (sob demanda)',
     plataforma: 'Google Meet',
   },
 ]
@@ -289,6 +340,34 @@ export const avisos: Aviso[] = [
     data: '2026-04-14',
     prioridade: 'baixa',
   },
+  {
+    id: '7',
+    titulo: '📢 Aulas Presenciais - Datas Atualizadas',
+    descricao: 'Lógica Matemática presencial: já ocorreu em 06/05. FSI presencial: 14/05 às 19h no Polo UAB Feira (Av. Pres. Dutra, 1000). Acompanhamento FSI com tutora Lorena: 15/05 às 19h via Google Meet. Novos encontros sendo organizados pela coordenação.',
+    data: '2026-05-14',
+    prioridade: 'alta',
+  },
+  {
+    id: '8',
+    titulo: '📋 Aulas Síncronas com Links Diretos',
+    descricao: 'Algoritmos (segunda 20h): RNP Mconf via AVA. FSI (terça 20h): RNP Mconf via AVA. Lógica (quinzenal quarta 19h): Google Meet. Aulas extras/alternativas: Meet. Acesse a aba Atividades para ver todos os links e gravações.',
+    data: '2026-05-14',
+    prioridade: 'media',
+  },
+  {
+    id: '9',
+    titulo: '🎯 Prazo de Atividades Prorrogado para 16/05',
+    descricao: 'Após os problemas no AVA, os professores prorrogaram as entregas. Data final: 16/05 (algumas atividades podem ir até 31/05). Dia 18/05 começam as disciplinas restantes do semestre (mais 4 matérias!). Organizem-se para não acumular.',
+    data: '2026-05-14',
+    prioridade: 'alta',
+  },
+  {
+    id: '10',
+    titulo: '🔧 DevOps Days - Esquenta HOJE (15/05)',
+    descricao: 'Esquenta do DevOps Days no CETENS hoje! Evento principal em 06/06 no Centro de Convenções. Inscrição via SIGAA. Não perca!',
+    data: '2026-05-14',
+    prioridade: 'media',
+  },
 ]
 
 // Infos do curso
@@ -306,6 +385,8 @@ export const infoCurso = {
   duracao: '4 anos (8 semestres)',
   periodo: '2026.1',
   polos: ['Feira de Santana', 'Santo Amaro', 'Ipirá'],
+  enderecoPolo: 'Av. Pres. Dutra, 1000 - Centro, Feira de Santana - BA, 44001-432',
+  poloLink: 'https://maps.app.goo.gl/d5vCEY14Dmr7x3Y27?g_st=iw',
 }
 
 // Infos do D.A
@@ -326,9 +407,23 @@ export const coordenacao = {
     email: 'iuri.souza@ufrb.edu.br',
     atendimento: 'Segunda e Quarta, 08h-10h',
   },
+  viceCoordenador: {
+    nome: 'Prof. Alex Ferreira dos Santos',
+    email: 'alex.ferreira@ufrb.edu.br',
+    descricao: 'Vice-coordenador do curso e professor de Algoritmos e Programação I.',
+  },
   colegiado: 'colegiado.bsi.ead@cetens.ufrb.edu.br',
   sapsi: 'sapsi@cetens.ufrb.edu.br',
   academico: 'academico@cetens.ufrb.edu.br',
+}
+
+// Links oficiais do curso (descobertos via web)
+export const linksOficiais = {
+  siteCurso: 'https://www.ufrb.edu.br/cetens/cursos/sistemas-de-informacao-ead',
+  ppc: 'https://ufrb.edu.br/cetens/documentos/category/141-sistemas-de-informacao?download=1472%3Aprojeto-pedagogico-de-curso-bacharelado-em-sistemas-de-informacao',
+  editalVagas: 'https://ufrb.edu.br/cetens/noticias/1175-ufrb-abre-inscricoes-para-o-curso-de-sistema-de-informacao-na-modalidade-ead-ingresso-2026-1',
+  suporteSigaa: 'https://ufrb.edu.br/surrac/suporte-sigaa',
+  devopsDays: 'https://devopsdays.org/events/2026-feira-de-santana/welcome/',
 }
 
 // Redes sociais da UFRB

@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
-import { Users, Mail, AlertTriangle, Crown, Shield, BookHeart, Award, GraduationCap, Mic, Code, HandHeart, Phone, MessageCircle } from 'lucide-react'
-import { diretoria, cargosVagos, infoDA, infoCurso } from '../data'
+import { Users, AlertTriangle, Crown, Shield, BookHeart, Award, GraduationCap, Mic, Code, HandHeart, MessageCircle, Camera } from 'lucide-react'
+import { cargosVagos, infoDA, infoCurso } from '../data'
 import { useTheme } from '../contexts/ThemeContext'
+
+const WHATSAPP_TI = '5575981231019'
+const MSG_SUBIR_FOTO = 'Estou subindo agora a foto, vou te enviar.'
 
 // Dados completos da diretoria com telefones
 const diretoriaCompleta = [
@@ -48,7 +51,7 @@ const diretoriaCompleta = [
   {
     nome: 'Brunna Moura',
     cargo: 'Divulgação e RP',
-    telefone: '7199463003',
+    telefone: '7582551854',
     descricao: 'Comunicação oficial, redes sociais, marketing e imagem do D.A. junto aos estudantes.',
     icon: <Mic className="w-8 h-8" />,
     cor: 'bg-pink-500',
@@ -57,7 +60,7 @@ const diretoriaCompleta = [
     nome: 'Deivison Santana',
     cargo: 'Tecnologia e Inovação',
     telefone: '7581231019',
-    descricao: 'Desenvolvimento de sistemas, sites, automações e soluções tecnológicas para facilitar a vida dos alunos.',
+    descricao: 'Desenvolvimento de sistemas, sites, automações e soluções tecnológicas para o D.A. e alunos.',
     icon: <Code className="w-8 h-8" />,
     cor: 'bg-cyan-500',
   },
@@ -72,7 +75,7 @@ const diretoriaCompleta = [
   {
     nome: 'Iuri Silva Motta',
     cargo: '1º Secretário Feira de Santana',
-    telefone: null,
+    telefone: '7199463003',
     descricao: 'Representação e suporte aos alunos do polo de Feira de Santana.',
     icon: <Users className="w-8 h-8" />,
     cor: 'bg-teal-500',
@@ -149,7 +152,7 @@ export default function Diretoria() {
                       className="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2 border-gray-200"
                     />
                   ) : (
-                    <div className={`w-16 h-16 ${membro.cor} rounded-full flex items-center justify-center text-white flex-shrink-0`}>
+                    <div className={`w-16 h-16 ${membro.cor} rounded-full flex items-center justify-center text-white flex-shrink-0 relative`}>
                       {membro.icon}
                     </div>
                   )}
@@ -164,15 +167,30 @@ export default function Diretoria() {
 
                 <p className="text-sm mb-4" style={{ color: '#4b5563' }}>{membro.descricao}</p>
 
+                {/* WhatsApp Contact */}
                 {membro.telefone && (
                   <a
                     href={`https://wa.me/55${membro.telefone}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-green-600 font-medium hover:text-green-700"
+                    className="flex items-center text-green-600 font-medium hover:text-green-700 mb-2"
                   >
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Entrar em contato pelo WhatsApp
+                  </a>
+                )}
+
+                {/* Botão de subir foto (só aparece se NÃO tem foto) */}
+                {!membro.foto && (
+                  <a
+                    href={`https://wa.me/55${WHATSAPP_TI}?text=${encodeURIComponent(MSG_SUBIR_FOTO)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm font-medium px-4 py-2 rounded-lg border transition-colors mt-2"
+                    style={{ borderColor: '#d1d5db', color: '#6b7280' }}
+                  >
+                    <Camera className="w-4 h-4 mr-2" />
+                    Sou essa pessoa, subir foto
                   </a>
                 )}
               </motion.div>

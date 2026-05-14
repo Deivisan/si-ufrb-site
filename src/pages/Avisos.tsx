@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Bell, AlertTriangle, Info, Clock, Calendar, BookOpen, Video, Users, MessageCircle, ExternalLink } from 'lucide-react'
-import { avisos, infoDA, disciplinas, linksUteis } from '../data'
+import { avisos, disciplinas, linksUteis } from '../data'
 import { useTheme } from '../contexts/ThemeContext'
 
 export default function Avisos() {

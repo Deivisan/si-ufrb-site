@@ -7,6 +7,7 @@ import { useTheme } from '../contexts/ThemeContext'
 const navLinks = [
   { to: '/', label: 'Início' },
   { to: '/diretoria', label: 'Diretoria' },
+  { to: '/atividades', label: 'Atividades' },
   { to: '/avisos', label: 'Avisos' },
   { to: '/links', label: 'Links Úteis' },
   { to: '/contato', label: 'Contato' },
