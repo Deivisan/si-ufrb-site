@@ -29,6 +29,7 @@ export default function Links() {
     { nome: 'Programação', links: linksUteis.filter(l => l.id === '12'), cor: '#2563eb' },
     { nome: 'Ferramentas de Estudo', links: linksUteis.filter(l => ['13','14'].includes(l.id)), cor: '#7c3aed' },
     { nome: 'Oficiais do Curso', links: linksUteis.filter(l => ['15','16','17'].includes(l.id)), cor: '#dc2626' },
+    { nome: 'Programas e Oportunidades', links: linksUteis.filter(l => ['18','19','20'].includes(l.id)), cor: '#059669' },
   ]
 
   return (
