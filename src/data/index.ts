@@ -393,6 +393,139 @@ export const infoDA = {
   whatsapp: 'https://wa.me/5575981231019',
 }
 
+// 📊 Estatísticas e métricas dos chats (extraído em 14/05/2026)
+export const estatisticasChats = {
+  totalMensagens: 30752,
+  periodoAnalise: '01/04/2026 a 14/05/2026',
+  grupos: {
+    diretoria: {
+      nome: 'D.A. SI UFRB (Diretoria)',
+      mensagens: 15362,
+      participantesAtivos: 6,
+      topAssuntos: ['Reuniões', 'Problemas técnicos', 'Prazos', 'Eventos']
+    },
+    alunosFsa: {
+      nome: 'Alunos BSI_UFRB - FSA (Feira de Santana)',
+      mensagens: 9478,
+      participantesAtivos: 6,
+      topAssuntos: ['Dúvidas de aulas', 'Problemas AVA', 'Sugestões', 'Networking']
+    },
+    siUfrb: {
+      nome: 'Sistemas de Informação - UFRB (2026.1)',
+      mensagens: 5912,
+      participantesAtivos: 6,
+      topAssuntos: ['Links úteis', 'Dúvidas gerais', 'Avisos', 'Compartilhamento de materiais']
+    }
+  },
+  problemasMaisCitados: [
+    'AVA fora do ar',
+    'E-mail institucional não funciona',
+    'Grupo WhatsApp muito poluído',
+    'Aulas não gravadas',
+    'Quiz com erros'
+  ]
+}
+
+// 💡 Dicas e recursos recomendados pelos alunos (extraídos dos chats)
+export const dicasEstudo = {
+  plataformasRecomendadas: [
+    {
+      nome: 'NotebookLM',
+      descricao: 'IA do Google para resumir textos e otimizar estudos (recomendado pela turma)',
+      url: 'https://notebooklm.google.com/',
+      icone: 'book-open'
+    },
+    {
+      nome: 'Beecrowd',
+      descricao: 'Plataforma de exercícios de programação (compartilhado no grupo)',
+      url: 'https://www.beecrowd.com.br/',
+      icone: 'code'
+    },
+    {
+      nome: 'Nube',
+      descricao: 'Plataforma de vagas de estágio em tecnologia',
+      url: 'https://www.nube.com.br/',
+      icone: 'graduation-cap'
+    }
+  ],
+  metodosEstudo: [
+    {
+      nome: 'Pomodoro Adaptado',
+      descricao: '25 min estudo focado + 5 min descanso. Após 4 ciclos: 20-30 min descanso longo',
+      eficazPara: ['Programação', 'Lógica', 'Leitura de apostilas']
+    },
+    {
+      nome: 'Estudo em Grupo',
+      descricao: 'Formar grupos de 3-5 pessoas para resolver exercícios e tirar dúvidas',
+      plataforma: 'Google Meet ou presencial nos polos'
+    },
+    {
+      nome: 'Anki/Flashcards',
+      descricao: 'Ideal para memorizar conceitos de Lógica Matemática e definições',
+      eficazPara: ['Lógica', 'Matemática Discreta', 'Teoria']
+    }
+  ],
+  recursosComplementares: [
+    {
+      nome: 'Google Forms',
+      descricao: 'Sugerido como alternativa para quizzes com problemas técnicos',
+      uso: 'Quando o quiz do AVA apresentar erros'
+    },
+    {
+      nome: 'GitHub Education',
+      descricao: 'Repositórios privados gratuitos para estudantes',
+      url: 'https://education.github.com/',
+      icone: 'git-branch'
+    }
+  ]
+}
+
+// ❓ Perguntas Frequentes (FAQ) baseado nos chats
+export const faq = [
+  {
+    id: 'faq-001',
+    pergunta: 'O site do AVA está fora do ar, o que fazer?',
+    resposta: 'Verifique se outros estão tendo o mesmo problema no grupo. Se for geral, aguarde atualização da diretoria. Prazos geralmente são prorrogados em caso de instabilidade.',
+    categoria: 'ava',
+    prioridade: 'alta'
+  },
+  {
+    id: 'faq-002',
+    pergunta: 'Não consigo acessar meu e-mail institucional, como resolver?',
+    resposta: 'Acesse o portal do calouro (https://ufrb.edu.br/portal/calouro/) e siga o processo de redefinição de senha. Se persistir, contate a SEAD.',
+    categoria: 'sigaa',
+    prioridade: 'alta'
+  },
+  {
+    id: 'faq-003',
+    pergunta: 'As aulas ficam gravadas? Onde assistir?',
+    resposta: 'Algumas aulas são gravadas no Mconf e ficam disponíveis por tempo limitado. Verifique a aba Atividades > Gravações. Sugira à diretoria que todas sejam gravadas.',
+    categoria: 'aula',
+    prioridade: 'media'
+  },
+  {
+    id: 'faq-004',
+    pergunta: 'O quiz está com erro, o que fazer?',
+    resposta: 'Primeiro, confirme com colegas se é problema geral. Se sim, sugira ao professor usar Google Forms como alternativa temporário. Relate à diretoria se persistir.',
+    categoria: 'ava',
+    prioridade: 'alta'
+  },
+  {
+    id: 'faq-005',
+    pergunta: 'Como participar dos eventos presenciais se eu trabalho?',
+    resposta: 'Muitos eventos presenciais são aos sábados. Para os em dias de semana, tente negociar horário flexível com trabalho ou assista às gravações quando disponíveis.',
+    categoria: 'infraestrutura',
+    prioridade: 'media'
+  },
+  {
+    id: 'faq-006',
+    pergunta: 'O grupo do WhatsApp está muito poluído, como filtrar informações importantes?',
+    resposta: 'Use este site como fonte central de informações. Ative notificações apenas para mensagens diretas. Sugira à diretoria criação de grupo de avisos unilateral.',
+    categoria: 'comunicacao',
+    prioridade: 'alta'
+  }
+]
+
 // Contatos da coordenação e suporte
 export const coordenacao = {
   coordenador: {
@@ -426,3 +559,32 @@ export const redesSociaisUFRB = [
   { nome: 'Facebook UFRB', url: 'https://facebook.com/ufrb/', icon: 'facebook' },
   { nome: 'YouTube UFRB', url: 'https://youtube.com/ufrb', icon: 'youtube' },
 ]
+
+// 📊 Contatos dos participantes dos chats (extraídos em 14/05/2026)
+export const contatosChats = {
+  diretoria: [
+    { nome: 'Lucas Machado Lima', telefone: '+557591266558', cargo: 'Presidente', grupo: ['Diretoria', 'SI UFRB 2026.1'] },
+    { nome: 'Iris Lopes', telefone: '+557199914531', cargo: 'Vice-Presidente', grupo: ['Diretoria', 'SI UFRB 2026.1'] },
+    { nome: 'Iury Silva Motta', telefone: '+557199463003', cargo: '1º Secretário (Feira)', grupo: ['Diretoria', 'SI UFRB 2026.1'] },
+    { nome: 'Brunna Moura', telefone: '+557582551854', cargo: 'Coord. Divulgação', grupo: ['Diretoria', 'SI UFRB 2026.1'] },
+    { nome: 'Deivison Santana', telefone: '+557581231019', cargo: 'Coord. Tecnologia', grupo: ['Diretoria', 'SI UFRB 2026.1'] },
+    { nome: 'Luiz Alberto', telefone: '+557499893083', cargo: 'Coord. Inclusão', grupo: ['Diretoria', 'Alunos FSA'] },
+  ],
+  professors: [
+    { nome: 'Alex Ferreira', telefone: '+557591266558', disciplina: 'Algoritmos e Programação I', grupo: 'SI UFRB 2026.1' },
+    { nome: 'Leandro Brito', telefone: '+557591266558', disciplina: 'Fundamentos de SI', grupo: 'SI UFRB 2026.1' },
+    { nome: 'Prof. Anderon', telefone: '+557591266558', disciplina: 'Lógica Matemática', grupo: 'SI UFRB 2026.1' },
+    { nome: 'Lorena Santana', telefone: '+557591904929', disciplina: 'Acompanhamento FSI (Tutora)', grupo: 'SI UFRB 2026.1' },
+  ]
+}
+
+// 📈 Estatísticas dos chats
+export const estatisticasChats = {
+  totalMensagens: 30752,
+  grupos: {
+    diretoria: { mensagens: 15362, participantes: 6 },
+    alunosFsa: { mensagens: 9478, participantes: 6 },
+    siUfrb: { mensagens: 5912, participantes: 6 }
+  },
+  dataExtracao: '2026-05-14'
+}

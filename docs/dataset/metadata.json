@@ -1,0 +1,35 @@
+{
+  "nome": "D.A. SI UFRB - Site Oficial",
+  "versao": "2.0.0",
+  "descricao": "Site do Diretório Acadêmico do Curso de Sistemas de Informação da UFRB",
+  "ultimaAtualizacao": "2026-05-14",
+  "dataset": {
+    "fonte": "WhatsApp Exports",
+    "grupos": {
+      "diretoria": {
+        "nome": "D.A. SI UFRB (Diretoria)",
+        "mensagens": 15362,
+        "dataExtracao": "2026-05-14"
+      },
+      "alunos-fsa": {
+        "nome": "Alunos BSI_UFRB - FSA (Feira de Santana)",
+        "mensagens": 9478,
+        "dataExtracao": "2026-05-14"
+      },
+      "si-ufrb": {
+        "nome": "Sistemas de Informação - UFRB (2026.1)",
+        "mensagens": 5912,
+        "dataExtracao": "2026-05-14"
+      }
+    },
+    "participantes": 6,
+    "totalMensagens": 30752
+  },
+  "curso": {
+    "nome": "Bacharelado em Sistemas de Informação",
+    "sigla": "BSI",
+    "universidade": "UFRB",
+    "periodo": "2026.1",
+    "duracao": "4 anos"
+  }
+}

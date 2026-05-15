@@ -6,6 +6,26 @@
 
 Este é o repositório do site oficial do **D.A. SI UFRB** (Diretório Acadêmico de Sistemas de Informação). O site serves como plataforma de comunicação entre a diretoria e os estudantes do curso, oferecendo informações sobre avisos, diretoria, links úteis e contato.
 
+## 📚 Documentação
+
+A documentação completa está em `/docs/`:
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `DOCUMENTACAO.md` | Índice geral da documentação |
+| `curso/informacoes-gerais.md` | Informações do curso BSI |
+| `curso/disciplinas.md` | Grade curricular |
+| `dataset/contatos.md` | Contatos da comunidade |
+| `dataset/problemas.md` | Problemas identificados |
+| `dataset/membros-chats.md` | Participantes dos chats |
+
+## 📊 Dataset dos Chats
+
+Dados extraídos dos grupos WhatsApp em 14/05/2026:
+- **Total de mensagens**: 30.752
+- **Grupos analisados**: 3
+- **Participantes únicos**: 6
+
 O site foi construído com base em dados extraídos do grupo WhatsApp da Diretoria, garantindo que as informações sejam atualizadas e relevantes para a comunidade acadêmica.
 
 ## 🎯 Funcionalidades
